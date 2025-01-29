@@ -9,7 +9,12 @@ const userData = {
   messages: {
     error: "Error"
   }
-}
+};
+
+const userDataTuple: [boolean, number, string, ...string[]] = [true, 40, "John", 'Alex', 'Anna']; 
+// userDataTuple[0] = true;
+
+const [bthd, age, userName] = userDataTuple;
 
 const createError = (msg: string) => {
   throw new Error(msg);
@@ -33,7 +38,7 @@ console.log(logBrtMsg(userData));
 const departments: string[] = ["dev", "design", "marketing"];
 
 const report = departments
-                          .filter(d => d !== "dev")
-                          .map(d => `${d} - done`);
+                          .filter((d: string) => d !== "dev")
+                          .map((d: string) => `${d} - done`);
 
 const nums: number[][] = [[1, 2, 3], [1, 2, 3]];
