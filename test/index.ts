@@ -104,11 +104,35 @@ function logValue(x: string | Date) {
   }
 }
 
+/////////////////////////////////
+
+let msg: "Hello" = "Hello";
+msg = "Hello";
+
+const serverConfig: {protocol: "http" | "https"; port: 3000 | 3001} = {
+  protocol: "http",
+  port: 3001,
+}
+
+const startServer: (protocol: "http" | "https", port: 3000 | 3001) => string = (
+  protocol: "http" | "https",
+  port: 3000 | 3001
+): "Server started" => {
+  console.log(`Server started on ${protocol}://server:${port}`);
+
+  return "Server started";
+}
+
+startServer(serverConfig.protocol, serverConfig.port);
+
+type AnimationTimingFunc = "ease" | "ease-in" | "ease-out";
+type AnimationID = string | number;
+
 // Literal types
 function createAnimation(
-  id: string | number,
+  id: AnimationID,
   animName: string,
-  timingFunc: "ease" | "ease-out" | "ease-in",
+  timingFunc: AnimationTimingFunc,
   duration: number,
   iterCount: "infinite" | number
 ): void {
