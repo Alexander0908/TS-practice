@@ -63,9 +63,9 @@ const totalData: TotalWarehouse = {
 function printReport(data: TotalWarehouse): string {
 	const result: string = Object.entries(data)
 		.filter((item) => item[1] === "empty")
-		//.reduce((res, item) => `${res} ${item[0]},`, "")
-		.map((item) => item[0])
-		.join(", ");
+		.reduce((res, item) => `${res} ${item[0]},`, "")
+		// .map((item) => item[0])
+		// .join(", ");
 
 	if (result.trim().length) {
 		return `We need this items:${result.slice(0, -1)}`;
