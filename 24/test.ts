@@ -1,11 +1,9 @@
-const serverNewConfig = {
+const serverNewConfig: BasicConfig = {
     protocol: "https",
     port: 3001,
-    role: 'admin',
-    log: (msg: string): void => console.log(msg)
 };
 
-const backupConfig = {
+const backupConfig: BasicConfig = {
     protocol: "http",
     port: 3000,
 };
